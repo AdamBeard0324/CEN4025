@@ -15,36 +15,43 @@ void zooFinances();
 int main()
 {
 int functionChoice = 0;
-char caseControl = 'y';
+string caseControl = "y";
 
 cout << "Welcome to the Zoo Information System" << endl;
-cout << "Please choose a function to access" << endl;
-cout << "1. Customer Billing \n" << "2. Customer Population \n" << "3. Animal Population \n";
-cout << "4. Animal Health \n" << "5. Cage Procedures \n" << "6. Zoo Finances \n" << endl;
 
-cin >> functionChoice;
+while (caseControl == "y" || caseControl == "Y" || caseControl == "Yes" || caseControl == "yes"){
 
-cout << endl;
+        caseControl = "n";
+        cout << "Please choose a function to access" << endl;
+        cout << "1. Customer Billing \n" << "2. Customer Population \n" << "3. Animal Population \n";
+        cout << "4. Animal Health \n" << "5. Cage Procedures \n" << "6. Zoo Finances \n" << endl;
+        cin >> functionChoice;
+        cout << endl;
 
-while (caseControl == 'y' or caseControl == 'Y' or caseControl == 'yes' or caseControl == 'Yes'){
     switch (functionChoice){
         case 1:
             customerBilling();
+            caseControl = "n";
             break;
         case 2:
             customerPopulation();
+            caseControl = "n";
             break;
         case 3:
             animalPopulation();
+            caseControl = "n";
             break;
         case 4:
             animalHealth();
+            caseControl = "n";
             break;
         case 5:
             cageProcedures();
+            caseControl = "n";
             break;
         case 6:
             zooFinances();
+            caseControl = "n";
             break;
         default:
             cout << "Not a valid selection." << endl;
@@ -53,21 +60,26 @@ while (caseControl == 'y' or caseControl == 'Y' or caseControl == 'yes' or caseC
 
     cout << "\nWould you like to use another function? Y/N" << endl;
     cin >> caseControl;
-    cout << endl;
 
-    if (caseControl == 'y' || caseControl == 'Y' || caseControl == 'yes' || caseControl == 'Yes'){
-        cout << "Please choose a function to access" << endl;
-        cout << "1. Customer Billing \n" << "2. Customer Population \n" << "3. Animal Population \n";
-        cout << "4. Animal Health \n" << "5. Cage Procedures \n" << "6. Zoo Finances \n" << endl;
-        cin >> functionChoice;
-        cout << endl;
-    }else if(caseControl == 'n' or caseControl == 'N' or caseControl == 'no' or caseControl == 'No'){
+    cout << "Case control is: " << caseControl << endl;
+    cout << endl;
+}
+
+
+
+
+    if(caseControl == "n" || caseControl == "N" || caseControl == "no" || caseControl == "No"){
         cout << "Goodbye" << endl;
-    }else{
+        caseControl = 'n';
+
+    }
+    else{
         cout << "Input not recognized. Goodbye." << endl;
+        caseControl = 'n';
         }
     }
-}
+
+
 
 
 //Beginning of void functions
